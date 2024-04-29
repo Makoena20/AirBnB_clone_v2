@@ -1,0 +1,37 @@
+import unittest
+import MySQLdb
+
+class TestCreateState(unittest.TestCase):
+    def setUp(self):
+        # Connect to the MySQL database
+        self.conn = MySQLdb.connect(
+            user='hbnb_test',
+            password='hbnb_test_pwd',
+            host='localhost',
+            database='hbnb_test_db'
+        )
+        self.cursor = self.conn.cursor()
+
+    def test_create_state(self):
+        # Get the initial count of records in the states table
+        self.cursor.execute("SELECT COUNT(*) FROM states")
+        initial_count = self.cursor.fetchone()[0]
+
+        # Execute the console command (e.g., create State name="California")
+        # Assume you have a function to execute console commands
+        execute_console_command("create State name='California'")
+
+        # Get the count of records in the states table after executing the command
+        self.cursor.execute("SELECT COUNT(*) FROM states")
+        final_count = self.cursor.fetchone()[0]
+
+        # Assert that the final count is greater than the initial count by 1
+        self.assertEqual(final_count, initial_count + 1)
+
+    def tearDown(self):
+        # Close the database connection
+        self.conn.close()
+
+if __name__ == '__main__':
+    unittest.main()
+

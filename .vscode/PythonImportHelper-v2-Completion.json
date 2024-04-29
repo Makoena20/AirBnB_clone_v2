@@ -1,0 +1,155 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "HBNBCommand",
+        "importPath": "console",
+        "description": "console",
+        "isExtraImport": true,
+        "detail": "console",
+        "documentation": {}
+    },
+    {
+        "label": "cmd",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cmd",
+        "description": "cmd",
+        "detail": "cmd",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "importPath": "models.engine.file_storage",
+        "description": "models.engine.file_storage",
+        "isExtraImport": true,
+        "detail": "models.engine.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "shlex",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shlex",
+        "description": "shlex",
+        "detail": "shlex",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "kind": 6,
+        "importPath": "models.engine.file_storage",
+        "description": "models.engine.file_storage",
+        "peekOfCode": "class FileStorage:\n    \"\"\"File storage class.\"\"\"\n    __file_path = \"file.json\"\n    __objects = {}\n    classes = {\n        'BaseModel': BaseModel\n    }\n    def all(self):\n        \"\"\"Return the dictionary __objects.\"\"\"\n        return FileStorage.__objects",
+        "detail": "models.engine.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "TestSomething",
+        "kind": 6,
+        "importPath": "tests.test_something",
+        "description": "tests.test_something",
+        "peekOfCode": "class TestSomething(unittest.TestCase):\n    \"\"\" Test cases for testing something \"\"\"\n    def setUp(self):\n        \"\"\" Set up test environment \"\"\"\n        storage.reset()\n        self.console_out = StringIO()\n        sys.stdout = self.console_out\n    def tearDown(self):\n        \"\"\" Clean up test environment \"\"\"\n        sys.stdout = sys.__stdout__",
+        "detail": "tests.test_something",
+        "documentation": {}
+    },
+    {
+        "label": "HBNBCommand",
+        "kind": 6,
+        "importPath": "console",
+        "description": "console",
+        "peekOfCode": "class HBNBCommand(cmd.Cmd):\n    \"\"\"Command interpreter class.\"\"\"\n    prompt = '(hbnb) '\n    file = None\n    def do_create(self, arg):\n        \"\"\"Create a new instance of BaseModel, save it to JSON file.\"\"\"\n        args = shlex.split(arg)\n        if len(args) < 1:\n            print(\"** class name missing **\")\n            return",
+        "detail": "console",
+        "documentation": {}
+    }
+]

@@ -4,7 +4,8 @@
 from models import *
 
 # creation of a State
-state = State(name="California")
+state = State(:wq
+        name="California")
 state.save()
 
 # creation of a City
@@ -41,4 +42,3 @@ place_2.amenities.append(amenity_3)
 storage.save()
 
 print("OK")
-

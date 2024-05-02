@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+-- #!/usr/bin/python3
+-- the above is wrong in and sql script, it is a python script shebang
 
 -- Script to prepare MySQL server for the project
 

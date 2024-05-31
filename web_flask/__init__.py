@@ -3,7 +3,5 @@
 Initialization module for the web_flask package.
 """
 
-from flask import Flask
-
-app = Flask(__name__)
+# This file can be empty or contain initialization code if necessary.
 

@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-A simple Flask web application.
+A simple Flask web application that displays 'Hello HBNB!'
 """
 
-from web_flask import app
+from flask import Flask
+
+app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """Display 'Hello HBNB!'"""
+    """Displays 'Hello HBNB!'"""
     return "Hello HBNB!"
 
 if __name__ == "__main__":

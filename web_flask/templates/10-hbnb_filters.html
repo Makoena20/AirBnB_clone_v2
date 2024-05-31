@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HBNB - Filters</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}">
+</head>
+<body>
+  <header class="clearfix">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="HBNB logo">
+      <h1>HBNB</h1>
+    </div>
+    <div class="filters">
+      <h2>Places</h2>
+      <div class="popover">
+        <button class="btn btn-primary" id="filter-states">States</button>
+        <div class="popcontent" id="states">
+          {% for state in states %}
+          <div class="checkbox">
+            <label for="state_{{ state.id }}">
+              <input type="checkbox" class="input-checkbox" name="state" id="state_{{ state.id }}" data-id="{{ state.id }}">
+              {{ state.name }}
+            </label>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="popover">
+        <button class="btn btn-primary" id="filter-cities">Cities</button>
+        <div class="popcontent" id="cities">
+          <!-- Cities will be loaded dynamically based on selected state -->
+        </div>
+      </div>
+      <div class="popover">
+        <button class="btn btn-primary" id="filter-amenities">Amenities</button>
+        <div class="popcontent" id="amenities">
+          {% for amenity in amenities %}
+          <div class="checkbox">
+            <label for="amenity_{{ amenity.id }}">
+              <input type="checkbox" class="input-checkbox" name="amenity" id="amenity_{{ amenity.id }}" data-id="{{ amenity.id }}">
+              {{ amenity.name }}
+            </label>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="places">
+    <h2>Places</h2>
+    <section class="places">
+      <!-- Places will be loaded dynamically based on selected filters -->
+    </section>
+  </div>
+  <footer class="clearfix">
+    <div class="footer">
+      <p>&copy; 2024 HBNB. All rights reserved</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='scripts/10-hbnb_filters.js') }}"></script>
+</body>
+</html>
+
